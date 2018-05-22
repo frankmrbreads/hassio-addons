@@ -1,0 +1,15 @@
+{
+  "name": "Bluetooth BCM43xx",
+  "version": "1.1",
+  "slug": "bluetooth_bcm43xx",
+  "description": "Activate Bluetooth for Broadcom 43xx chips",
+  "url": "https://home-assistant.io/addons/bluetooth_bcm43xx/",
+  "startup": "initialize",
+  "boot": "auto",
+  "host_network": "true",
+  "privileged": ["NET_ADMIN"],
+  "devices": ["/dev/ttyAMA0:/dev/ttyAMA0:rwm"],
+  "options": {},
+  "schema": {},
+  "image": "homeassistant/{arch}-addon-bluetooth_bcm43xx"
+}
