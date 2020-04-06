@@ -4,8 +4,4 @@ Enable this plugin repository for [Hass.io](https://home-assistant.io/hassio/) f
 
 nut forked from asciinaut/hassio-addons
 
-life360 forked from
-
-bluetooth_bcm43xx forked from
-
-Dropbox-sync forked from
+xboxone forked from ericleb010/hassio-addons

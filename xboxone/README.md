@@ -22,27 +22,27 @@ This component replicates many of the features of the Xbox App.  If it can't be 
 
 ## Installation
 
+You can choose to either install this add-on through Hass.io's frontend, or doing it manually.
+
+### Through the frontend
+
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository](https://github.com/hunterjm/hassio-addons) to your Hass.io instance.
-2. Install the "Xbox One" add-on.
-3. Start the "Xbox One" add-on.
-4. Check the logs of the "Xbox One" add-on to see if everything went well.
-5. Surf to your Hass.io instance and use port `5557`
-    (e.g. `http://hassio.local:5557`).
-6. Authenticate with Xbox Live by going to [/auth/oauth](http://hassio.local:5557/auth/oauth)
-    and following the directions.
-    
-## Manual Installation
-1. Enter your home assistant python virtual-environment.
-2. Execute `pip install xbox-smartglass-rest`.
-3. Create a service to autostart the server (e.g. for Systemd).
-4. Enable / start the service.
-5. Copy `xboxone.py` to `<hass config path>/custom_components/media_player/xboxone.py`.
-6. Proceed with __Installation__ step 5.
+1. [Add our Hass.io add-ons repository](https://github.com/ericleb010/hassio-addons) to your Hass.io instance.
+1. Install the "Xbox One" add-on.
+1. Start the "Xbox One" add-on.
+1. Check the logs of the "Xbox One" add-on to see if everything went well.
 
-### Systemd service example
+### Manually
+1. Enter your home assistant python virtual-environment.
+1. Execute `pip install xbox-smartglass-rest`.
+1. Create a service to autostart the server (e.g. for Systemd).
+1. Enable / start the service.
+1. Copy `manifest.json`, and `__init__.py` to `<hass config path>/custom_components/xboxone`.
+1. Copy `xboxone.py` to `<hass config path>/custom_components/xboxone/media_player.py`.
+
+#### Systemd service example
 
 File location: `/etc/systemd/system/xbox-smartglass-rest@homeassistant.service`
 
@@ -70,6 +70,15 @@ SendSIGKILL=no
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Authenticate with Xbox Live
+
+In order to use some of the features listed above, you'll need to sign into Xbox Live.
+
+1. Surf to your Hass.io instance and use port `5557`
+    (e.g. `http://hassio.local:5557`).
+1. Authenticate by going to [/auth/oauth](http://hassio.local:5557/auth/oauth)
+    and following the directions.
 
 ## Home Assistant Configuration
 
@@ -122,3 +131,5 @@ The original setup of this repository is by [Jason Hunter](https://github.com/hu
 Huge shoutout to [Team OpenXbox](https://github.com/openxbox) for reverse engineering the SmartGlass protocol and providing the libraries and server used.
 
 Special thanks to the contributions of [tuxuser](https://github.com/tuxuser) for answering late night questions and doing almost all of the heavy lifting on this.
+
+Further thanks to [jmhill1287](https://github.com/jmhill1287) for forking and supporting this library for a few months.
